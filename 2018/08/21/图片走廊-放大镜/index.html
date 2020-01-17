@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favico.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favico.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="2018,js,闭包," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="大魏军营中关羽：你怎么平天下？曹：灭袁绍，平北方。怀柔江东孙家，驻军西凉，可谓中原一统太平。休养生息，不出十年，南蜀自然俯首称臣。曹操再三表意皇帝不可杀，否则各方诸侯都会以此为借口群起造反。届时乱世将难以终结，可惜谋事在人成事在天，最后历史还是如此的进行着，以至于到了三分天下从最初的汉室垂危黄巾起义到最后天下归一，六十年，国号不为蜀，不为魏，更不为吴，而是晋。生逢乱世，有人成为了一代名将，一代">
+<meta name="keywords" content="2018,js,闭包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片走廊&amp;放大镜">
+<meta property="og:url" content="http://yoursite.com/2018/08/21/图片走廊-放大镜/index.html">
+<meta property="og:site_name" content="平安网吧">
+<meta property="og:description" content="大魏军营中关羽：你怎么平天下？曹：灭袁绍，平北方。怀柔江东孙家，驻军西凉，可谓中原一统太平。休养生息，不出十年，南蜀自然俯首称臣。曹操再三表意皇帝不可杀，否则各方诸侯都会以此为借口群起造反。届时乱世将难以终结，可惜谋事在人成事在天，最后历史还是如此的进行着，以至于到了三分天下从最初的汉室垂危黄巾起义到最后天下归一，六十年，国号不为蜀，不为魏，更不为吴，而是晋。生逢乱世，有人成为了一代名将，一代">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/threeKingdom.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/big.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/skill.jpg">
+<meta property="og:updated_time" content="2019-06-09T10:55:08.750Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图片走廊&amp;放大镜">
+<meta name="twitter:description" content="大魏军营中关羽：你怎么平天下？曹：灭袁绍，平北方。怀柔江东孙家，驻军西凉，可谓中原一统太平。休养生息，不出十年，南蜀自然俯首称臣。曹操再三表意皇帝不可杀，否则各方诸侯都会以此为借口群起造反。届时乱世将难以终结，可惜谋事在人成事在天，最后历史还是如此的进行着，以至于到了三分天下从最初的汉室垂危黄巾起义到最后天下归一，六十年，国号不为蜀，不为魏，更不为吴，而是晋。生逢乱世，有人成为了一代名将，一代">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/threeKingdom.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"canvas_nest":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/21/图片走廊-放大镜/"/>
+
+
+
+
+
+  <title>图片走廊&放大镜 | 平安网吧</title>
+  
+
+
+
+
+
+
+
+
+</head>
+  
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">平安网吧</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">talk is cheap,soldier~</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/图片走廊-放大镜/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dcc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="平安网吧">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">图片走廊&放大镜</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T23:44:40+08:00">
+                2018-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端方面/" itemprop="url" rel="index">
+                    <span itemprop="name">前端方面</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/21/图片走廊-放大镜/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/21/图片走廊-放大镜/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,892
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/threeKingdom.jpg" alt=""></p>
+<blockquote>
+<p>大魏军营中<br>关羽：你怎么平天下？<br>曹：灭袁绍，平北方。怀柔江东孙家，驻军西凉，可谓中原一统太平。休养生息，不出十年，南蜀自然俯首称臣。<br>曹操再三表意皇帝不可杀，否则各方诸侯都会以此为借口群起造反。届时乱世将难以终结，可惜谋事在人成事在天，最后历史还是如此的进行着，以至于到了三分天下<br>从最初的汉室垂危黄巾起义到最后天下归一，六十年，国号不为蜀，不为魏，更不为吴，而是晋。<br>生逢乱世，有人成为了一代名将，一代谋士，一代君王；有人看淡了成败，有人认清了现实，有人年少成名，有人大器晚成，有人含恨而终，有人英勇赴死。<br>而作为历史的见证者，我们看到的则是“滚滚长江东逝水,浪花淘尽英雄”</p>
+</blockquote>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=476592630&auto=0&height=66"></iframe>
+
+<p>咳咳，回到<strong>2018</strong>，</p>
+<p>距离返校还有不到十天的时间，抓紧多练习一些JS方面的小组件，原来只是想着练习图片走廊，但后来发现图片走廊一般都是搭配放大镜功能出现的，便一并写了，过程不算平坦。<br><a id="more"></a></p>
+<h1 id="关于图片走廊和放大镜"><a href="#关于图片走廊和放大镜" class="headerlink" title="关于图片走廊和放大镜"></a>关于图片走廊和放大镜</h1><ol>
+<li><p>这次练习中，使用了queryselector的方法抓取元素，就效率而言虽没有getElementby..函数高，但胜在方便。也更加深入学习了DOM与BOM中的<code>getAttribute</code>与<code>setAttribute</code>，各种距离相关的属性<code>clientX/clientY</code>，<code>getBoundingClientRect()</code>，加深了元素与浏览器之间互动的编程理解。</p>
+</li>
+<li><p>保存过程中有一点十分有趣，前半部分图片走廊是利用循环加上闭包给元素绑定事件，而后半段放大镜则是利用<code>addEventListener</code>事件监听的功能进行事件绑定。面对多种多样的编程方式，都应多加涉猎与练习思考。</p>
+</li>
+<li><p>不断地练习组件，但还是把它们放在一起，不然徒有一堆部件而不成完品。就想测试中既有<code>单元测试</code>也有<code>集成测试</code>一样。我把之前的轮播图和这次的图片走廊&amp;放大镜放在一起进行编写，发现变量的命名是个大问题。论坛社区中一直强调的代码规范性第一次实打实的出现在了眼前，还需多加练习。</p>
+</li>
+</ol>
+<p>4.完成组件如图<br>    <img src="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/big.png" alt=""></p>
+<hr>
+<h1 id="正题↓"><a href="#正题↓" class="headerlink" title="正题↓"></a>正题↓</h1><h2 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h2><ol>
+<li><p>一个主盒子content,包含着上部分pic，下部分list。上部分展示大图，下部分图片走廊。cover是选择放大区域，而display是展现放大区域。</p>
+<pre><code>&lt;div class=&quot;content&quot;&gt;
+    &lt;div class=&quot;pic&quot;&gt;
+    &lt;img src=&quot;img/clothes1.jpg&quot; alt=&quot;11&quot; class=&quot;Big&quot;&gt;
+    &lt;div class=&quot;cover&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul class=&quot;list&quot;&gt;
+    &lt;li&gt;&lt;img src=&quot;img/clothes1.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;img/clothes2.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;img/clothes3.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;img/clothes4.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;img/clothes5.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;display&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h2 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h2></li>
+<li><p>css部分没有多少新东西，就是div+css常规写法，就是图片走廊部分list采用flex弹性盒模型，还有<code>justify-content</code>属性。让布局省力了些。</p>
+<pre><code>*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.content{
+    position: relative;
+    width: 400px;
+    height: 480px;
+    margin: 60px auto;
+    border: 1px solid orangered;
+}
+
+.Big{
+    width: 400px;
+    height: 400px;
+}
+
+.list{
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+}
+
+.list img{
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.list .active{
+    border: solid royalblue;
+}
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    display: none;
+}
+
+.display{
+    position: absolute;
+    top: 0;
+    left: 400px;
+    width: 400px;
+    height: 400px;
+    background-image: url(../img/clothes1.jpg);
+    background-size: 400%;    //思考
+    display: none;
+}
+</code></pre></li>
+</ol>
+<h2 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h2><p>ps：由于代码思路并不是完全自顶向下，譬如一些函数调用时写到第80行才回到第25行进行调用，所以我尽量注解，我认为阅读代码也是一项技能，像电路板一样，时而一鼓作气，时而峰回路转，哈哈。</p>
+<ol>
+<li><p>抓取元素</p>
+<pre><code>var list = document.querySelector(&apos;.list&apos;),
+    imgs = list.querySelectorAll(&apos;img&apos;),
+    Big = document.querySelector(&apos;.Big&apos;),
+    pic = document.querySelector(&apos;.pic&apos;),
+    cover = document.querySelector(&apos;.cover&apos;),
+    display = document.querySelector(&apos;.display&apos;),
+    index = 0;   //square（）函数将用到
+</code></pre></li>
+<li><p>开始抓取小图的src，并把小图的src设置给大图</p>
+</li>
+<li><p>showPic(whichPic)中的whichPic是小图中的某个，小图并不是单一个，而是一个<strong>数组</strong>，我们要假设一个<strong>形参</strong></p>
+<pre><code>function showPic(whichPic){
+    var small = whichPic.getAttribute(&apos;src&apos;);
+    Big.setAttribute(&apos;src&apos;,small);
+    display.style.backgroundImage = &apos;url(&apos;+ small +&apos;)&apos;; //这行代码的作用是在后面display放大区域的呈现
+}
+</code></pre></li>
+<li><p>开始实现鼠标放置在指定小图，指定的小图实现border(其实可以加的不止是border，你也可以参照自己的想法加很多属性) </p>
+<pre><code>function square(){
+    for(var i = 0;i&lt;imgs.length;i++){
+        if(imgs[i].className = &apos;active&apos;){
+        imgs[i].className = &apos;&apos;;
+    }
+} 
+  imgs[index].className = &apos;active&apos;; //注意此行代码的位置，不要写错.这里的index如何放置也值得思考。
+</code></pre><p> }</p>
+</li>
+<li><p>这里我们已经将两大函数功能完成，剩下的是进行事件绑定</p>
+</li>
+<li><p>这里使用了立即执行函数也就是闭包(很多时候我们不用闭包功能依旧能实现，但错误的数字循环会让以后的程序拓展性堵死，不可取。要养成习惯)</p>
+</li>
+<li><p>我们把其中i的值赋给了index，因为<code>0 1 2 3 4</code>这样的计时走法完美符合square()函数的规则。我们指到<strong>哪个</strong>，<strong>哪个</strong>就添加<code>active</code></p>
+</li>
+<li><p>这里的showPic(this)，我们把指定的小图(this)，传给showPic() </p>
+</li>
+</ol>
+<pre><code>for(var i = 0;i&lt;imgs.length;i++){
+(function(i){
+    imgs[i].onmouseover = function(){
+    showPic(this);
+    index = i;
+    square();
+    }
+})(i);  //这里的括号若不熟悉需要多多观察
+}
+</code></pre><p>ps:到这里，前半部分的功能算是结束了，下半部分则是运用事件监听来让<code>cover</code>随着鼠标移动，随即让放大区域<code>display</code>跟着移动。这里我搜索了很多，没办法，很多<code>BOM</code> <code>DOM</code>都需要在实践中学习。</p>
+<ol start="9">
+<li><p>我们抓取pic，并给它进行事件监听，这里参数<strong>e</strong>也需要多多思考</p>
+</li>
+<li><p>我们选取了 client X ,clientY 这两个是鼠标距离浏览器左上角的top值和left值</p>
+</li>
+<li><p>而<code>getBoundingClientRect().left/top</code>则是选取了元素距离浏览器左上角的top值和left值  </p>
+</li>
+<li><p>我们想要<code>cover</code>随着移动，无非就是让cover的top值和left值随着鼠标的移动而产生变化。而cover的top值和left值就需要一个减法来实现</p>
+</li>
+<li><p>而这个值就是<code>clientX</code>减去<code>getBoundingClientRect().left</code></p>
+</li>
+<li><p>为什么要这样，为什么要还要减50，如图所示(其实这里还是画的不太严谨，B指向的应该是cover小块的左上角,A指向大图的左上角)<br><img src="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/skill.jpg" alt=""></p>
+</li>
+<li><p>垂直的Y轴同理，操作一致。</p>
+</li>
+<li><p>我们还要让<code>cover</code>在<code>pic</code>框内不出去，要设定四个if语句</p>
+<pre><code>pic.addEventListener(&apos;mousemove&apos;,function(e){
+    cover.style.display = &apos;block&apos;;   //放置即出现
+    display.style.display = &apos;block&apos;; //放置即出现    
+    var x = e.clientX,
+        y = e.clientY,
+        cx = pic.getBoundingClientRect().left,
+        cy = pic.getBoundingClientRect().top,
+        tx = x - cx - 50,
+        ty = y - cy - 50;       
+        if(tx&lt;0){
+            tx = 0;
+        }
+        if(ty&lt;0){
+            ty = 0;
+        }
+        if(tx&gt;300){
+            tx = 300;
+        }
+        if(ty&gt;300){
+            ty = 300;
+        }
+        cover.style.left = tx + &apos;px&apos;;    //取值
+        cover.style.top = ty + &apos;px&apos;;    //取值
+        display.style.backgroundPosition = tx/300*100 + &apos;%&apos; + ty/300 *100 + &apos;%&apos;; //让display内的背景图放大，需要思考
+    })
+</code></pre></li>
+<li><p>我们还需要让鼠标移出大图时<code>cover</code>和<code>display</code>消失</p>
+<pre><code>pic.addEventListener(&apos;mouseout&apos;,function(){
+    cover.style.display = &apos;none&apos;;
+    display.style.display = &apos;none&apos;;
+})
+</code></pre></li>
+</ol>
+<p>好了，到这里整个部件就完成了，不多不少。</p>
+<p>这两个月，快接近尾声，战友们都按故旧班的完成着自己的任务，甚是开心。让人越来越期待出去的日子了。</p>
+<p><strong>完整代码在此–&gt;</strong><a href="https://github.com/PingAnNetBar/amplification" target="_blank" rel="noopener">GITHUB</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/2018/" rel="tag"><i class="fa fa-google"></i>2018</a>
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-google"></i>js</a>
+          
+            <a href="/tags/闭包/" rel="tag"><i class="fa fa-google"></i>闭包</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/07/简单易学的轮播图-面向过程函数式/" rel="next" title="简单易学的轮播图(面向过程函数式)">
+                <i class="fa fa-chevron-left"></i> 简单易学的轮播图(面向过程函数式)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/26/真正的男儿不怕失败！/" rel="prev" title="真正的男儿不怕失败！">
+                真正的男儿不怕失败！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/me.gif"
+                alt="dcc" />
+            
+              <p class="site-author-name" itemprop="name">dcc</p>
+              <p class="site-description motion-element" itemprop="description">记录一些方方面面的东西</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/pingannetbar" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:840495823@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+       
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34383069&auto=1&height=66"></iframe>
+
+          
+
+        </div>
+      </section>
+  
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于图片走廊和放大镜"><span class="nav-number">1.</span> <span class="nav-text">关于图片走廊和放大镜</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正题↓"><span class="nav-number">2.</span> <span class="nav-text">正题↓</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML部分"><span class="nav-number">2.1.</span> <span class="nav-text">HTML部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS部分"><span class="nav-number">2.2.</span> <span class="nav-text">CSS部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS部分"><span class="nav-number">2.3.</span> <span class="nav-text">JS部分</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dcc</span>
+    
+  
+</div>
+
+
+ <!-- <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div> -->
+
+ 
+<!--
+ <span class="post-meta-divider">|</span> 
+-->
+
+
+<!--  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div> -->
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'U4XvitpqPlTfrgXhQYz1EczT-gzGzoHsz',
+        appKey: 'kaN115OpMY406FXF94qeg0FK',
+        placeholder: '你把你评论给我交了!(#大声)',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
