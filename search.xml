@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[test]]></title>
+    <url>%2F2020%2F01%2F19%2Ftest%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[多线程初探]]></title>
     <url>%2F2020%2F01%2F03%2F%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%88%9D%E6%8E%A2%2F</url>
     <content type="text"><![CDATA[什么是线程？与进程又是什么关系？我们为什么需要多线程？下列是维基百科对线程和进程的定义↓ 线程（英语：thread）是操作系统能够进行运算调度的最小单位。大部分情况下，它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。在Unix System V及SunOS中也被称为轻量进程（lightweight processes），但轻量进程更多指内核线程（kernel thread），而把用户线程（user thread）称为线程。 进程（英语：process），是指计算机中已运行的程序。进程曾经是分时系统的基本运作单位。在面向进程设计的系统（如早期的UNIX，Linux 2.4及更早的版本）中，进程是程序的基本执行实体；在面向线程设计的系统（如当代多数操作系统、Linux 2.6及更新的版本）中，进程本身不是基本运行单位，而是线程的容器。程序本身只是指令、数据及其组织形式的描述，进程才是程序（那些指令和数据）的真正运行实例。若干进程有可能与同一个程序相关系，且每个进程皆可以同步（循序）或异步（平行）的方式独立运行。现代计算机系统可在同一段时间内以进程的形式将多个程序加载到存储器中，并借由时间共享（或称时分复用），以在一个处理器上表现出同时（平行性）运行的感觉。同样的，使用多线程技术（多线程即每一个线程都代表一个进程内的一个独立执行上下文）的操作系统或计算机体系结构，同样程序的平行线程，可在多CPU主机或网络上真正同时运行（在不同的CPU上）。 我们如何去理解进程和线程几次总结发现都没有这位朋友赘述的易懂生动，下列为引用↓ 做个简单的比喻：进程=火车，线程=车厢 - 线程在进程下行进（单纯的车厢无法运行 - 一个进程可以包含多个线程（一辆火车可以有多个车厢）不同进程间数据很难共享（一辆火车上的乘客很难换到另外一辆火车，比如站点换乘） - 同一进程下不同线程间数据很易共享（A车厢换到B车厢很容易） - 进程要比线程消耗更多的计算机资源（采用多列火车相比多个车厢更耗资源）进程间不会相互影响，一个线程挂掉将导致整个进程挂掉（一列火车不会影响到另外一列火车，但是如果一列火车上中间的一节车厢着火了，将影响到所有车厢） - 进程可以拓展到多机，进程最多适合多核（不同火车可以开在多个轨道上，同一火车的车厢不能在行进的不同的轨道上）进程使用的内存地址可以上锁，即一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。（比如火车上的洗手间） －&quot;互斥锁&quot;进程使用的内存地址可以限定使用量（比如火车上的餐厅，最多只允许多少人进入，如果满了需要在门口等，等有人出来了才能进去）－“信号量” 作者：biaodianfu 链接：https://www.zhihu.com/question/25532384/answer/411179772 来源：知乎 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 为何需要多线程？这里为计算阶乘的无多线程程序↓(其实编写多线程的例子最好是IO密集型应用，这里计算阶乘的计算属于CPU密集型应用，如果没有人为的加上一些无意义循环，几乎看不到效果。且多线程用在正常的CPU密集型应用(它多半是很快的)还多半会降低性能。) 12345678910111213141516171819202122232425262728293031323334 long t0 = System.currentTimeMillis();//按照顺序依次执行4次循环1000次的calculate(10000) for (int i = 0; i &lt; 1000; i++) &#123; calculateFactorial(10000); &#125; for (int i = 0; i &lt; 1000; i++) &#123; calculateFactorial(10000); &#125; for (int i = 0; i &lt; 1000; i++) &#123; calculateFactorial(10000); &#125; for (int i = 0; i &lt; 1000; i++) &#123; calculateFactorial(10000); &#125; long t1 = System.currentTimeMillis(); System.out.println("耗时为" + (t1 - t0) + "ms"); &#125; private static long calculateFactorial(long N) &#123; if (N &lt; 0) &#123; return -1;//传入的数据不合法 &#125; if (N == 0) &#123; return 1; &#125; else if (N == 1) &#123;//递归结束的条件 return 1; &#125; else &#123; return N * calculateFactorial(N - 1); &#125; &#125; 测试结果普遍在 150ms 以上(反复测试可能还会溢出报错) 以下采用的是多线程版↓ 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859long t0 = System.currentTimeMillis(); //这里开启四个线程，同时且无须的执行4个calculateFactorial方法new Thread(new Runnable() &#123; @Override public void run() &#123; for (int i = 0; i &lt; 1000; i++) &#123; calculateFactorial(10000); &#125; &#125; &#125;).start(); new Thread(new Runnable() &#123; @Override public void run() &#123; for (int i = 0; i &lt; 1000; i++) &#123; calculateFactorial(10000); &#125; &#125; &#125;).start(); new Thread(new Runnable() &#123; @Override public void run() &#123; for (int i = 0; i &lt; 1000; i++) &#123; calculateFactorial(10000); &#125; &#125; &#125;).start(); new Thread(new Runnable() &#123; @Override public void run() &#123; for (int i = 0; i &lt; 1000; i++) &#123; calculateFactorial(10000); &#125; &#125; &#125;).start(); long t1 = System.currentTimeMillis(); System.out.println("耗时为" + (t1 - t0) + "ms"); &#125; private static long calculateFactorial(long N) &#123; if (N &lt; 0) &#123; return -1;//传入的数据不合法 &#125; if (N == 0) &#123; return 1; &#125; else if (N == 1) &#123;//递归结束的条件 return 1; &#125; else &#123; return N * calculateFactorial(N - 1); &#125; &#125; 测试结果普遍在 90ms 以下（效果显著！） 记住，多线程要能够成立你必须要保证有多个工人，只有一个工人你派发了两分任务也只是一个人做。还有，线程thread被创建出来并不会做功，你必须要给它下达start()或run()方法才行。 多线程会带来什么问题？如何去避免？多线程会带来以下三种问题 原子性问题 可见性问题 有序性问题 以下为原子性问题&amp;有序性问题的结合↓ 123456789101112131415161718192021 private static int num = 0; public static void main(String[] args) &#123; //循环一千次，new一个线程对类变量num进行操作↓ for (int i = 0; i &lt; 100; i++) &#123; new Thread(new Runnable() &#123; @Override public void run() &#123; add(); &#125; &#125;).start(); &#125; &#125; private static void add() &#123; num++; System.out.println("num="+ num); &#125; 你会得到一列很匪夷所思的打印，可能同一个数打印了两次，可能过程中一些数字漏了，可能还超过了100…….这是因为计算机在无序的且来回切换线程进行作业的，但自增本身是一个非原子性操作，并不是一步到位，这就让多线程变得很危险。 解决方案:对类变量添加 volatile 修饰符(这并不是百试百灵，多线程真的很诡异。。) 总结没啥说的，查阅了一下关于线程的相关试题，几乎都是关于锁和线程安全还有基于线程源码解读来解决实际问题三方面，自己却还没有进入到这一阶段。加油！]]></content>
@@ -113,8 +118,8 @@
         <category>English</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>翻译</tag>
+        <tag>学习</tag>
       </tags>
   </entry>
   <entry>
@@ -133,8 +138,8 @@
         <category>English</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>翻译</tag>
+        <tag>学习</tag>
       </tags>
   </entry>
   <entry>
