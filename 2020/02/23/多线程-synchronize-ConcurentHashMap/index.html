@@ -86,17 +86,20 @@
 
 
 
+<meta name="description" content="前言上一次我们的多线程衍生到了锁的概念，由于在编写程序的过程涉及了部分非原子操作，这些操作会让程序在多线程的模型之下运行起来非常危险。而我们又如何使用相应的措施去避免危险呢。  synchronized三种用法 ConcurrentHashMap的线程同步机制 知识拓展">
 <meta name="keywords" content="JAVA,2020">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多线程初探">
-<meta property="og:url" content="http://yoursite.com/2020/01/03/多线程初探/index.html">
+<meta property="og:title" content="多线程(synchronized&amp;ConcurentHashMap)">
+<meta property="og:url" content="http://yoursite.com/2020/02/23/多线程-synchronize-ConcurentHashMap/index.html">
 <meta property="og:site_name" content="平安网吧">
+<meta property="og:description" content="前言上一次我们的多线程衍生到了锁的概念，由于在编写程序的过程涉及了部分非原子操作，这些操作会让程序在多线程的模型之下运行起来非常危险。而我们又如何使用相应的措施去避免危险呢。  synchronized三种用法 ConcurrentHashMap的线程同步机制 知识拓展">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/multithreading1.jpg">
-<meta property="og:updated_time" content="2020-02-23T15:05:29.505Z">
+<meta property="og:image" content="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1818797596,1924851008&fm=26&gp=0.jpg">
+<meta property="og:updated_time" content="2020-02-23T17:38:54.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多线程初探">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/multithreading1.jpg">
+<meta name="twitter:title" content="多线程(synchronized&amp;ConcurentHashMap)">
+<meta name="twitter:description" content="前言上一次我们的多线程衍生到了锁的概念，由于在编写程序的过程涉及了部分非原子操作，这些操作会让程序在多线程的模型之下运行起来非常危险。而我们又如何使用相应的措施去避免危险呢。  synchronized三种用法 ConcurrentHashMap的线程同步机制 知识拓展">
+<meta name="twitter:image" content="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1818797596,1924851008&fm=26&gp=0.jpg">
 
 
 
@@ -126,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/01/03/多线程初探/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/23/多线程-synchronize-ConcurentHashMap/"/>
 
 
 
 
 
-  <title>多线程初探 | 平安网吧</title>
+  <title>多线程(synchronized&ConcurentHashMap) | 平安网吧</title>
   
 
 
@@ -293,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/03/多线程初探/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/23/多线程-synchronize-ConcurentHashMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dcc">
@@ -310,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">多线程初探</h1>
+          <h1 class="post-title" itemprop="name headline">多线程(synchronized&ConcurentHashMap)</h1>
         
 
         <div class="post-meta">
@@ -322,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-03T16:44:46+08:00">
-                2020-01-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-23T22:53:39+08:00">
+                2020-02-23
               </time>
             
 
@@ -363,8 +366,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/01/03/多线程初探/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/03/多线程初探/" itemprop="commentCount"></span>
+                <a href="/2020/02/23/多线程-synchronize-ConcurentHashMap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/23/多线程-synchronize-ConcurentHashMap/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -391,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,899
+                  1,926
                 </span>
               
 
@@ -428,46 +431,81 @@
       
 
       
-        <p><img src="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/multithreading1.jpg"></p>
-<a id="more"></a>
-<h3 id="什么是线程？与进程又是什么关系？我们为什么需要多线程？"><a href="#什么是线程？与进程又是什么关系？我们为什么需要多线程？" class="headerlink" title="什么是线程？与进程又是什么关系？我们为什么需要多线程？"></a>什么是线程？与进程又是什么关系？我们为什么需要多线程？</h3><h4 id="下列是维基百科对线程和进程的定义↓"><a href="#下列是维基百科对线程和进程的定义↓" class="headerlink" title="下列是维基百科对线程和进程的定义↓"></a>下列是维基百科对线程和进程的定义↓</h4><blockquote>
-<p>线程（英语：thread）是<strong>操作系统能够进行运算调度的最小单位</strong>。大部分情况下，它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条线程并行执行不同的任务。在Unix System V及SunOS中也被称为轻量进程（lightweight processes），但轻量进程更多指内核线程（kernel thread），而把用户线程（user thread）称为线程。</p>
-</blockquote>
-<blockquote>
-<p>进程（英语：process），是指<strong>计算机中已运行的程序。进程曾经是分时系统的基本运作单位。在面向进程设计的系统（如早期的UNIX，Linux 2.4及更早的版本）中，进程是程序的基本执行实体；在面向线程设计的系统（如当代多数操作系统、Linux 2.6及更新的版本）中，进程本身不是基本运行单位，而是线程的容器。</strong>程序本身只是指令、数据及其组织形式的描述，进程才是程序（那些指令和数据）的真正运行实例。若干进程有可能与同一个程序相关系，且每个进程皆可以同步（循序）或异步（平行）的方式独立运行。现代计算机系统可在同一段时间内以进程的形式将多个程序加载到存储器中，并借由时间共享（或称时分复用），以在一个处理器上表现出同时（平行性）运行的感觉。同样的，使用多线程技术（多线程即每一个线程都代表一个进程内的一个独立执行上下文）的操作系统或计算机体系结构，同样程序的平行线程，可在多CPU主机或网络上真正同时运行（在不同的CPU上）。</p>
-</blockquote>
-<h4 id="我们如何去理解进程和线程"><a href="#我们如何去理解进程和线程" class="headerlink" title="我们如何去理解进程和线程"></a>我们如何去理解进程和线程</h4><p>几次总结发现都没有这位朋友赘述的易懂生动，下列为引用↓</p>
-<pre><code>做个简单的比喻：进程=火车，线程=车厢
-
-- 线程在进程下行进（单纯的车厢无法运行
-- 一个进程可以包含多个线程（一辆火车可以有多个车厢）不同进程间数据很难共享（一辆火车上的乘客很难换到另外一辆火车，比如站点换乘）
-- 同一进程下不同线程间数据很易共享（A车厢换到B车厢很容易）
-- 进程要比线程消耗更多的计算机资源（采用多列火车相比多个车厢更耗资源）进程间不会相互影响，一个线程挂掉将导致整个进程挂掉（一列火车不会影响到另外一列火车，但是如果一列火车上中间的一节车厢着火了，将影响到所有车厢）
-- 进程可以拓展到多机，进程最多适合多核（不同火车可以开在多个轨道上，同一火车的车厢不能在行进的不同的轨道上）进程使用的内存地址可以上锁，即一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。（比如火车上的洗手间）
-－&quot;互斥锁&quot;进程使用的内存地址可以限定使用量（比如火车上的餐厅，最多只允许多少人进入，如果满了需要在门口等，等有人出来了才能进去）－“信号量”
-
-作者：biaodianfu
-链接：https://www.zhihu.com/question/25532384/answer/411179772
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-</code></pre><h4 id="为何需要多线程？"><a href="#为何需要多线程？" class="headerlink" title="为何需要多线程？"></a>为何需要多线程？</h4><p>这里为计算阶乘的无多线程程序↓(其实编写多线程的例子最好是IO密集型应用，这里计算阶乘的计算属于CPU密集型应用，如果没有人为的加上一些无意义循环，几乎看不到效果。且多线程用在正常的CPU密集型应用(它多半是很快的)还多半会降低性能。)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      <span class="keyword">long</span> t0 = System.currentTimeMillis();</span><br><span class="line"><span class="comment">//按照顺序依次执行4次循环1000次的calculate(10000)</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">          calculateFactorial(<span class="number">10000</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">          calculateFactorial(<span class="number">10000</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">          calculateFactorial(<span class="number">10000</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">          calculateFactorial(<span class="number">10000</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">long</span> t1 = System.currentTimeMillis();</span><br><span class="line">      System.out.println(<span class="string">"耗时为"</span> + (t1 - t0) + <span class="string">"ms"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">calculateFactorial</span><span class="params">(<span class="keyword">long</span> N)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (N &lt; <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//传入的数据不合法</span></span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (N == <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (N == <span class="number">1</span>) &#123;<span class="comment">//递归结束的条件</span></span><br><span class="line">              <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="keyword">return</span> N * calculateFactorial(N - <span class="number">1</span>);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>测试结果普遍在 150ms 以上</strong>(反复测试可能还会溢出报错)</p>
-<p>以下采用的是多线程版↓</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">long</span> t0 = System.currentTimeMillis();</span><br><span class="line">      </span><br><span class="line"><span class="comment">//这里开启四个线程，同时且无序的执行4个calculateFactorial方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">          <span class="meta">@Override</span></span><br><span class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">                  calculateFactorial(<span class="number">10000</span>);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;).start();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">          <span class="meta">@Override</span></span><br><span class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">                  calculateFactorial(<span class="number">10000</span>);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;).start();</span><br><span class="line">      <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">          <span class="meta">@Override</span></span><br><span class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">                  calculateFactorial(<span class="number">10000</span>);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;).start();</span><br><span class="line">      <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">          <span class="meta">@Override</span></span><br><span class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">                  calculateFactorial(<span class="number">10000</span>);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;).start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="keyword">long</span> t1 = System.currentTimeMillis();</span><br><span class="line">      System.out.println(<span class="string">"耗时为"</span> + (t1 - t0) + <span class="string">"ms"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">calculateFactorial</span><span class="params">(<span class="keyword">long</span> N)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (N &lt; <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="keyword">return</span> -<span class="number">1</span>;<span class="comment">//传入的数据不合法</span></span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">if</span> (N == <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (N == <span class="number">1</span>) &#123;<span class="comment">//递归结束的条件</span></span><br><span class="line">              <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="keyword">return</span> N * calculateFactorial(N - <span class="number">1</span>);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>测试结果普遍在 90ms 以下</strong>（效果显著！）</p>
-<p>记住，多线程要能够成立你必须要保证有<strong>多个工人</strong>，只有一个工人你派发了两分任务也只是一个人做。还有，线程thread被创建出来并不会做功，你必须要给它下达start()或run()方法才行。</p>
-<h3 id="多线程会带来什么问题？如何去避免？"><a href="#多线程会带来什么问题？如何去避免？" class="headerlink" title="多线程会带来什么问题？如何去避免？"></a>多线程会带来什么问题？如何去避免？</h3><p>多线程会带来以下三种问题</p>
+        <p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1818797596,1924851008&fm=26&gp=0.jpg"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>上一次我们的多线程衍生到了<code>锁</code>的概念，由于在编写程序的过程涉及了部分<code>非原子操作</code>，这些操作会让程序在多线程的模型之下运行起来非常危险。而我们又如何使用相应的措施去避免危险呢。</p>
 <ul>
-<li>原子性问题</li>
-<li>可见性问题</li>
-<li>有序性问题</li>
+<li>synchronized三种用法</li>
+<li>ConcurrentHashMap的线程同步机制</li>
+<li>知识拓展</li>
 </ul>
-<p>以下为<code>原子性问题</code>&amp;<code>有序性问题</code>的结合↓</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span>  <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//循环一千次，new一个线程对类变量num进行操作↓</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">           <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">               <span class="meta">@Override</span></span><br><span class="line">               <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                   add();</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;).start();</span><br><span class="line">       &#125;	</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line">       <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       num++;</span><br><span class="line">       System.out.println(<span class="string">"num="</span>+ num);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-<p>你会得到一列很匪夷所思的打印，可能同一个数打印了两次，可能过程中一些数字漏了，可能还超过了100…….这是因为<strong>计算机在无序的且来回切换线程进行作业的，但<code>自增</code>本身是一个非原子性操作，并不是一步到位，这就让多线程变得很危险。</strong></p>
-<p>解决方案:对类变量添加 volatile 修饰符(这并不是百试百灵，多线程真的很诡异。。)</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>没啥说的，查阅了一下关于线程的相关试题，几乎都是关于<code>锁</code>和<code>线程安全</code>还有<code>基于线程源码解读来解决实际问题</code>三方面，自己却还没有进入到这一阶段。加油！</p>
+<a id="more"></a>
+<h3 id="Synchronize"><a href="#Synchronize" class="headerlink" title="Synchronize"></a>Synchronize</h3><p>这里我们设置一个全局变量，并使用平常的自增方法进行自增并输出</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span>  <span class="keyword">int</span> i = <span class="number">0</span>; </span><br><span class="line">	</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">1000</span>; j++) &#123;</span><br><span class="line">        main.add();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    i++;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编写起来非常平铺直叙的代码，输出也是很正常的1,2,3,…,1000</p>
+<p>可我们使用多线程来加速完成这个任务↓</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">main.add(); -&gt;  <span class="keyword">new</span> Thread(Main::add).start();</span><br></pre></td></tr></table></figure>
+<p>输出就出现了错误，并没有让i自增到1000。而且每一次重新运行程序结果都会不一样(这是非常危险的)。</p>
+<p><strong>线程的变量的共享几乎是所有多线程的坑的来源!</strong>    </p>
+<p>而这里，我们就可以使用锁的概念，<strong>某个线程要想执行相应代码，就必须要拿到对应的锁，执行完了之后，锁再次提供给其他线程争抢，如此反复，保证了保证了某段代码正只被一个线程执行，不被其他线程干扰。</strong>这里的锁这是一个概念，我们真正使用的是Java的多线程同步机制关键字<code>synchronized、</code></p>
+<h4 id="synchronized-Object"><a href="#synchronized-Object" class="headerlink" title="synchronized(Object)"></a>synchronized(Object)</h4><p> 先设置一个全局变量Object.<br> 给原先的add方法方法体套上一个synchronized代码块</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object lock = <span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (lock) &#123;</span><br><span class="line">        i++;</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>系统输出再一次回归正常。这是因为我们把一个对象当成了锁，只有拿到了lock的线程才能执行add方法体的代码。</p>
+<h4 id="synchronized-Method"><a href="#synchronized-Method" class="headerlink" title="synchronized Method()"></a>synchronized Method()</h4><p> 直接给静态方法add加上关键字<code>synchronized</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">           i++;</span><br><span class="line">           System.out.println(i);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p> 系统输出再一次回归正常，这是因为我们把当前所处的Class对象当成了锁。该Class对象存在于JVM，且只有一份(这也是为什么它能成为锁),JVM可以依照这个<code>说明书</code>来创建无数的对象。</p>
+<h4 id="synchronized-instance-Method"><a href="#synchronized-instance-Method" class="headerlink" title="synchronized instance.Method()"></a>synchronized instance.Method()</h4><p> 在实例方法时，我们一样可以使用线程同步块<br> main方法内创建一个实例main<br> 调用者变成了main<br> 直接给实例方法add加上关键字<code>synchronized</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Main main = <span class="keyword">new</span> Main();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">1000</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">new</span> Thread(main::add).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 系统输出再一次回归正常，这是因为我们将当前对象<code>main</code>当成了锁，每一个线程必须争抢到这个锁才能执行相应代码块。</p>
+<p> 它也有第二种写法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">        i++;</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这也变相证明了确实是以实例对象为锁实现了线程同步。</p>
+<h3 id="ConcurrentHashMap的线程同步机制"><a href="#ConcurrentHashMap的线程同步机制" class="headerlink" title="ConcurrentHashMap的线程同步机制"></a>ConcurrentHashMap的线程同步机制</h3><p> 我们最常使用的线程安全类就是<code>ConcurrentHashMap</code>了 </p>
+<p> HashMap的不安全，主要发生在put等对HashEntry有直接写操作的地方。</p>
+<p> <strong>我们讨论多线程问题多半是在写，而不是读。原子性的麻烦远高于可见性</strong><br> 这里就要讲一下同样是基于哈希表实现的HashTable，它一样是线程安全的，但和Vector一样，JDK1时就诞生，却在随后就被弃用了。HashTable是在整个put方法上加上synchronized关键字(就如同上面演示的代码一样)，synchronized的机制是在同一时刻只能有一个线程操作，没有争抢到锁的线程继续等待，在线程竞争激烈的情况下，这种方式的效率非常低下。</p>
+<h4 id="ConcurrentHashMap-get"><a href="#ConcurrentHashMap-get" class="headerlink" title="ConcurrentHashMap.get()"></a>ConcurrentHashMap.get()</h4><ul>
+<li><p>根据key，计算出hashCode；</p>
+</li>
+<li><p>根据步骤1计算出的hashCode定位segment，如果segment不为null &amp;&amp; segment.table也不为null，跳转到步骤3，否则，返回null，该key所对应的value不存在；</p>
+</li>
+<li><p>根据hashCode定位table中对应的hashEntry，遍历hashEntry，如果key存在，返回key对应的value；</p>
+</li>
+<li><p>步骤3结束仍未找到key所对应的value，返回null，该key锁对应的value不存在。</p>
+<p>ConcurrentHashMap里所有的value都加上了关键字volatile，volatile保证了三大问题中的可见性，没有synchronized，可谓快了不少(<code>读</code>操作是简单的)</p>
+</li>
+</ul>
+<h4 id="ConcurrentHashMap-put"><a href="#ConcurrentHashMap-put" class="headerlink" title="ConcurrentHashMap.put()"></a>ConcurrentHashMap.put()</h4><p>put</p>
+<ul>
+<li><p>参数校验，value不能为null，为null时抛出NPE；</p>
+</li>
+<li><p>计算key的hashCode；</p>
+</li>
+<li><p>定位segment，如果segment不存在，创建新的segment；</p>
+</li>
+<li><p>调用segment的put方法在对应的segment做插入操作。</p>
+</li>
+</ul>
+<p>segment.put</p>
+<ul>
+<li><p>获取锁，保证put操作的线程安全；</p>
+</li>
+<li><p>定位到HashEntry数组中具体的HashEntry；</p>
+</li>
+<li><p>遍历HashEntry链表，假若待插入key已存在：</p>
+<p>需要更新key所对应value（!onlyIfAbsent），更新oldValue -&gt; newValue，跳转到步骤5；</p>
+<p>否则，直接跳转到步骤5；</p>
+</li>
+<li><p>遍历完HashEntry链表，key不存在，插入HashEntry节点，oldValue = null，跳转到步骤5；</p>
+</li>
+<li><p>释放锁，返回oldValue。</p>
+</li>
+</ul>
+<blockquote>
+<p>如果容器有很多把锁，每一把锁控制容器中的一部分数据，那么当多个线程访问容器里的不同部分的数据时，线程之前就不会存在锁的竞争，这样就可以有效的提高并发的访问效率。这也正是ConcurrentHashMap使用的分段锁技术。将ConcurrentHashMap容器的数据分段存储，每一段数据分配一个Segment（锁），当线程占用其中一个Segment时，其他线程可正常访问其他段数据。</p>
+</blockquote>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><h4 id="Integer-无法被synchronized锁住！"><a href="#Integer-无法被synchronized锁住！" class="headerlink" title="Integer 无法被synchronized锁住！"></a>Integer 无法被synchronized锁住！</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//IntegerCache.low = -127</span></span><br><span class="line"><span class="comment">//IntegerCache.high = 128</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">           <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p> 当为Integer赋值数值在-128~127区间时，会从Integer中的一个Integer中获取一个缓存的Integer对象，而超出区间值得时候，每次都会new一个新的Integer对象。对Integer进行递增/递减操作后，其实HashCode已经发生了变化，synchronized自然也不是同一个对象实例。</p>
+<h4 id="synchronized关键字不能继承。！"><a href="#synchronized关键字不能继承。！" class="headerlink" title="synchronized关键字不能继承。！"></a>synchronized关键字不能继承。！</h4><p> 虽然可以使用synchronized来定义方法，但synchronized并不属于方法定义的一部分，因此，synchronized关键字不能被继承。如果在父类中的某个方法使用了synchronized关键字，而在子类中覆盖了这个方法，在子类中的这个方法默认情况下并不是同步的，而必须显式地在子类的这个方法中加上synchronized关键字才可以。当然，还可以在子类方法中调用父类中相应的方法，这样虽然子类中的方法不是同步的，但子类调用了父类的同步方法，因此，子类的方法也就相当于同步了。</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p> 我们知道，JDK针对每一个结构类都进行了线程安全的概述，明确说明该类到底是线程安全还是非安全的。我们都尽量不要在多线程环境下使用线程不安全的类去编写代码(但还是有人会在多线程下很喜欢使用StringBuilder….)。针对非原子性的操作，我们也要格外注意。<strong>Java强大的虚拟机注定了我们虽然编写比其他语言要繁琐一些，可一旦JVM通过，就说明代码没有大问题。但在多线程安全方面，JVM并不能为我们帮太多忙。</strong>学习Java线程安全机制和各个常用类的线程同步机制可以让我们更好更安全的去编写多线程代码。</p>
 
       
     </div>
@@ -500,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/09/A-man-with-the-tool-and-his-spirit/" rel="next" title="A man with the tool and his spirit">
-                <i class="fa fa-chevron-left"></i> A man with the tool and his spirit
+              <a href="/2020/01/03/多线程初探/" rel="next" title="多线程初探">
+                <i class="fa fa-chevron-left"></i> 多线程初探
               </a>
             
           </div>
@@ -509,10 +547,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/23/多线程-synchronize-ConcurentHashMap/" rel="prev" title="多线程(synchronized&ConcurentHashMap)">
-                多线程(synchronized&ConcurentHashMap) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -669,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是线程？与进程又是什么关系？我们为什么需要多线程？"><span class="nav-number">1.</span> <span class="nav-text">什么是线程？与进程又是什么关系？我们为什么需要多线程？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下列是维基百科对线程和进程的定义↓"><span class="nav-number">1.1.</span> <span class="nav-text">下列是维基百科对线程和进程的定义↓</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们如何去理解进程和线程"><span class="nav-number">1.2.</span> <span class="nav-text">我们如何去理解进程和线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何需要多线程？"><span class="nav-number">1.3.</span> <span class="nav-text">为何需要多线程？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程会带来什么问题？如何去避免？"><span class="nav-number">2.</span> <span class="nav-text">多线程会带来什么问题？如何去避免？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Synchronize"><span class="nav-number">2.</span> <span class="nav-text">Synchronize</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized-Object"><span class="nav-number">2.1.</span> <span class="nav-text">synchronized(Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized-Method"><span class="nav-number">2.2.</span> <span class="nav-text">synchronized Method()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized-instance-Method"><span class="nav-number">2.3.</span> <span class="nav-text">synchronized instance.Method()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap的线程同步机制"><span class="nav-number">3.</span> <span class="nav-text">ConcurrentHashMap的线程同步机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ConcurrentHashMap-get"><span class="nav-number">3.1.</span> <span class="nav-text">ConcurrentHashMap.get()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ConcurrentHashMap-put"><span class="nav-number">3.2.</span> <span class="nav-text">ConcurrentHashMap.put()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展"><span class="nav-number">4.</span> <span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Integer-无法被synchronized锁住！"><span class="nav-number">4.1.</span> <span class="nav-text">Integer 无法被synchronized锁住！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#synchronized关键字不能继承。！"><span class="nav-number">4.2.</span> <span class="nav-text">synchronized关键字不能继承。！</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">5.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
