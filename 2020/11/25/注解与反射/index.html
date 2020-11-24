@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="学习,2020,Java," />
 
 
 
@@ -86,16 +86,22 @@
 
 
 
-<meta name="description" content="记录一些方方面面的东西">
-<meta property="og:type" content="website">
-<meta property="og:title" content="平安网吧">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="注解&amp;amp;反射为什么要学习注解与反射？ 注解与反射作为Java语言特性的后半程的高级部分，学习曲线是比较陡峭的。但它又是Java初学者必须跨越的门槛。因为在当下Java的市场，技术选型中的SSM占据着大部分份额。而Spring中两大核心内容的Ioc容器与AOP、MyBatis的ORM，它们的底层实现都是由注解与反射所构建的。若注解反射掌握的不好，很难去真正理解框架的本质，也就自然很难脱离他人的">
+<meta name="keywords" content="学习,2020,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="注解与反射">
+<meta property="og:url" content="http://yoursite.com/2020/11/25/注解与反射/index.html">
 <meta property="og:site_name" content="平安网吧">
-<meta property="og:description" content="记录一些方方面面的东西">
+<meta property="og:description" content="注解&amp;amp;反射为什么要学习注解与反射？ 注解与反射作为Java语言特性的后半程的高级部分，学习曲线是比较陡峭的。但它又是Java初学者必须跨越的门槛。因为在当下Java的市场，技术选型中的SSM占据着大部分份额。而Spring中两大核心内容的Ioc容器与AOP、MyBatis的ORM，它们的底层实现都是由注解与反射所构建的。若注解反射掌握的不好，很难去真正理解框架的本质，也就自然很难脱离他人的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://violet.vivianlin.cn/images/class.jpg">
+<meta property="og:image" content="http://violet.vivianlin.cn/images/classloader.png">
+<meta property="og:image" content="http://violet.vivianlin.cn/images/loaderType.jpg">
+<meta property="og:updated_time" content="2020-11-24T16:49:56.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="平安网吧">
-<meta name="twitter:description" content="记录一些方方面面的东西">
+<meta name="twitter:title" content="注解与反射">
+<meta name="twitter:description" content="注解&amp;amp;反射为什么要学习注解与反射？ 注解与反射作为Java语言特性的后半程的高级部分，学习曲线是比较陡峭的。但它又是Java初学者必须跨越的门槛。因为在当下Java的市场，技术选型中的SSM占据着大部分份额。而Spring中两大核心内容的Ioc容器与AOP、MyBatis的ORM，它们的底层实现都是由注解与反射所构建的。若注解反射掌握的不好，很难去真正理解框架的本质，也就自然很难脱离他人的">
+<meta name="twitter:image" content="http://violet.vivianlin.cn/images/class.jpg">
 
 
 
@@ -125,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/11/25/注解与反射/"/>
 
 
 
 
 
-  <title>平安网吧</title>
+  <title>注解与反射 | 平安网吧</title>
   
 
 
@@ -150,8 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,9 +283,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -310,9 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/11/25/注解与反射/" itemprop="url">注解与反射</a></h1>
+          <h1 class="post-title" itemprop="name headline">注解与反射</h1>
         
 
         <div class="post-meta">
@@ -376,6 +379,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -425,9 +433,7 @@
       
 
       
-        
-          
-            <h1 id="注解-amp-反射"><a href="#注解-amp-反射" class="headerlink" title="注解&amp;反射"></a>注解&amp;反射</h1><h3 id="为什么要学习注解与反射？"><a href="#为什么要学习注解与反射？" class="headerlink" title="为什么要学习注解与反射？"></a>为什么要学习注解与反射？</h3><blockquote>
+        <h1 id="注解-amp-反射"><a href="#注解-amp-反射" class="headerlink" title="注解&amp;反射"></a>注解&amp;反射</h1><h3 id="为什么要学习注解与反射？"><a href="#为什么要学习注解与反射？" class="headerlink" title="为什么要学习注解与反射？"></a>为什么要学习注解与反射？</h3><blockquote>
 <p>注解与反射作为Java语言特性的后半程的高级部分，学习曲线是比较陡峭的。但它又是Java初学者必须跨越的门槛。因为在当下Java的市场，技术选型中的<abbr title="Spring+SpringMVC+MyBatis">SSM</abbr>占据着大部分份额。而Spring中两大核心内容的Ioc容器与AOP、MyBatis的<abbr title="Object Relation Mapping 对象关系映射">ORM</abbr>，它们的底层实现都是由注解与反射所构建的。若注解反射掌握的不好，很难去真正理解框架的本质，也就自然很难脱离他人的协助去很好的借助框架编写项目。可以说，学不好递归，就与掌握非线性数据结构无缘。学不好注解反射，就与掌握Java框架无缘。</p>
 </blockquote>
 <h3 id="学习之前"><a href="#学习之前" class="headerlink" title="学习之前"></a>学习之前</h3><p>注解是建立在Java的发射机制上的特性。所以要弄懂注解，就要先弄懂反射，要弄懂反射，就要先弄懂类加载的过程。本文三点都会提及，并不需要自上而下的阅读。</p>
@@ -762,8 +768,6 @@
 <p><strong>利用注解+反射的机制拼接除了简单的SQL语句(甚至可以学到StringJoiner hhh)</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CREATE TABLE <span class="title">Stu_Table</span><span class="params">(ID VARCHAR(<span class="number">30</span>)</span> PRIMARY KEY ,NAME <span class="title">VARCHAR</span><span class="params">(<span class="number">30</span>)</span> NOT NULL ,AGE INT ,PHONENUMBER INT NOT NULL UNIQUE )</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>反射可以实现动态创建对象与编译，体现出了很大的灵活性。但它对性能却有着很明显的影响，反射本身是一种解释操作，告诉JVM我们希望做什么并且它满足我们的要求，这类操作总是慢于直接执行相同的操作。过多的反射确实能减少开发的工作量，但会给服务器带来多出的负担，一定要在权衡了开发效率和执行性能后,视场景和性能要求谨慎使用。<br>注解+反射的组合远远没有这些用途，它真正的用途是作用与目前Java的实施标准框架的Spring的底层核心,IOC以及AOP。动态代理是一块非常重要的点，而要掌握它，就要先掌握基本的注解与反射。</p>
 
-          
-        
       
     </div>
     
@@ -778,776 +782,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/26/浅析-URL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/26/浅析-URL/" itemprop="url">浅析 URL</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-26T20:51:41+08:00">
-                2020-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机原理方向/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机原理方向</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/学习/" rel="tag"><i class="fa fa-google"></i>学习</a>
           
-
+            <a href="/tags/2020/" rel="tag"><i class="fa fa-google"></i>2020</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/26/浅析-URL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/26/浅析-URL/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-google"></i>Java</a>
           
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  372
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.URL包含哪几部分，每部分分别起什么作用 </p>
-<p>URL = protocol + port + path + queryString + anchor</p>
-<p>统一资源定位 = 协议 + 域名或IP + 端口 + 路径 + 传讯字符串 + 锚点</p>
-<p>协议： 它是一种规则，约定。为进行网络中的数据交换而建立的规则，约定。用于不同系统中实体间的通信。</p>
-<p>IP：       网际互连协议，HTTP协议是属于TCP/IP协议簇的，它可以帮助我们定位一台设备，以及如何封装数据报文，跟其他设备交流。</p>
-<p>域名： 十进制的IP地址是难以去记忆的，我们需要更加语义化的东西，域名。它可以理解为IP的别称。一个域名可以对应不同的IP，一个IP可以对应不同的域名。</p>
-<p>端口：  机器可以提供非常多的服务，每一个服务都有一个号码，这个号码叫端口。HTTP服务-&gt; port:80 HTTPS-&gt; port: 443 FTP -&gt; port:21,共65535个端口。</p>
-<p>路径/查询字符串/锚点:</p>
-<p>请求不同的页面：使用路径</p>
-<p>请求同一个页面，却不同的内容： 使用查询字符串</p>
-<p>请求同一个页面，同一个内容，却是不同的位置： 使用锚点</p>
-<p>锚点之和浏览器有关系，和服务器无关，会把它吞掉。</p>
-<p>逐步细化</p>
-<hr>
-<p>2.DNS 的作用是什么，nslookup 命令怎么用</p>
-<p>域名系统（服务）协议，用于域名与 IP 地址的相互转换 </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/23/多线程-synchronize-ConcurentHashMap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/23/多线程-synchronize-ConcurentHashMap/" itemprop="url">多线程(synchronized&ConcurentHashMap)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-23T22:53:39+08:00">
-                2020-02-23
-              </time>
+              <a href="/2020/02/26/浅析-URL/" rel="next" title="浅析 URL">
+                <i class="fa fa-chevron-left"></i> 浅析 URL
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端方向/" itemprop="url" rel="index">
-                    <span itemprop="name">后端方向</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/23/多线程-synchronize-ConcurentHashMap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/23/多线程-synchronize-ConcurentHashMap/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,926
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1818797596,1924851008&fm=26&gp=0.jpg"></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>上一次我们的多线程衍生到了<code>锁</code>的概念，由于在编写程序的过程涉及了部分<code>非原子操作</code>，这些操作会让程序在多线程的模型之下运行起来非常危险。而我们又如何使用相应的措施去避免危险呢。</p>
-<ul>
-<li>synchronized三种用法</li>
-<li>ConcurrentHashMap的线程同步机制</li>
-<li>知识拓展</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/23/多线程-synchronize-ConcurentHashMap/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/03/多线程初探/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/03/多线程初探/" itemprop="url">多线程初探</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-03T16:44:46+08:00">
-                2020-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端方向/" itemprop="url" rel="index">
-                    <span itemprop="name">后端方向</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/03/多线程初探/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/03/多线程初探/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,899
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/multithreading1.jpg"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/03/多线程初探/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/09/A-man-with-the-tool-and-his-spirit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/09/A-man-with-the-tool-and-his-spirit/" itemprop="url">A man with the tool and his spirit</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-09T23:21:15+08:00">
-                2019-11-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/English/" itemprop="url" rel="index">
-                    <span itemprop="name">English</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/11/09/A-man-with-the-tool-and-his-spirit/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/09/A-man-with-the-tool-and-his-spirit/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  455
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p><img src="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/A%20man%20with%20the%20tool%20and%20his%20spirit.jpg"></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>S</em>ince our father (I mean the ancestor) was coming to this land.  A desperate situation for them, humans have been hunted by predators(these giant beasts), but they still alive. Why? Because they learned to stand as one and made the weapon against the predators.  After that, there is no more enemy can fight with them when they discovered the fire and created the spear. In the end, our father conquests any land which they are crossing.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>H</em>onestly, the beast has many body advantages. Felids have the supervision that they can be watching in the night, even without light. The panther can maintain high speed on the ground of about one hundred kilometers per hour. The crocodile has the most powerful bite in the world, crash prey’s bone that like chocolate. What a great gift they have! But just like the old saying, Gift also means curse. The night vision also brings myopia, and the super speed also brings the short-lived. The crocodile’s bite makes it a clumsy body to evade the crisis.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>W</em>hat about humans? You may ask. Okay, everything in the human body is moderate, but we have the secret weapon, tool. The tool is the greatest invention in human history.  We have gone through many crises and questions with the help of this friend.  Okay, what’s the tool. You need it, it comes. You don’t need it, it leaves.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>B</em>ut this is not enough if our human wants to keep our dominance in the earth. Because the tool is not the talent, it’s not from our body, and they could disappear. We are a weakness when we leave the tool. The spirit is the only advantage that we have to get through the challenge. Let me illustrate, The long march of the Red Army. It has not played a secondary role in human history. Contrary, it’s just as pivotal as the tool that we mentioned.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>W</em>e still cannot escape from the parameter of the biology，nomatter how great we claim to be. We can help someone, but also can hurt someone, the lion could be dangerous, but so what? Imagining the human’s war,  the blade, the gun, the biochemistry weapon, the nuclear weapon…., thousand and millions of innocent people will die. Sometimes, we humans are our own worst nightmare. Will power could help us to overcome the despair when we have nothing and stop us from becoming a demon when we do the bad things, just like Adolf Hitler. Spirit is always there for us and telling.  Who we are and what we should do as a human.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>唯</em>有情深似海亦无边，任凭云散风吹去</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1557,933 +825,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/ArrayList-java初探/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/18/ArrayList-java初探/" itemprop="url">ArrayList.java初探</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T18:37:44+08:00">
-                2019-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端方向/" itemprop="url" rel="index">
-                    <span itemprop="name">后端方向</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/18/ArrayList-java初探/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/18/ArrayList-java初探/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,182
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  11
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://raw.githubusercontent.com/PingAnNetBar/web-photo-gallery/master/arrayList0.png"></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=198765&auto=0&height=66"></iframe>
-
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>妹有前言</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/18/ArrayList-java初探/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/Maven-and-Classpath-Hell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/28/Maven-and-Classpath-Hell/" itemprop="url">Maven and Classpath Hell</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T07:44:45+08:00">
-                2019-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端方向/" itemprop="url" rel="index">
-                    <span itemprop="name">后端方向</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/28/Maven-and-Classpath-Hell/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/28/Maven-and-Classpath-Hell/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,258
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  9
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://s2.ax1x.com/2019/09/28/uQp8EQ.jpg" alt=""></p>
-<ul>
-<li>前言</li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之前其实一直在用到Maven，但却没有怎么下功夫了解。但了解Maven还是非常有必要的。我一直很认同ber哥的一句话。</p>
-<blockquote>
-<p>强大的IDE会割裂你和这些底层的运作。但你还是要了解这些底层运行的原理，因为总会遇到各种各样的问题让你不得不和这些底层打交道，对于工程师来说，生疏的表现是不合适的。了解这些细节，有助于你解决问题。工作就是在解决各种各样的问题。</p>
-</blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过了解Maven所为我们做的，我们可以更深刻的理解整个JAVA世界的历史变革，对我们现在使用的一切有一定认知性。虽然不能讲得很深，但也能大致对Maven有一个感性的认识了。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/28/Maven-and-Classpath-Hell/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/JAVA的装箱类型初探/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/22/JAVA的装箱类型初探/" itemprop="url">JAVA的装箱类型初探</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-22T14:17:14+08:00">
-                2019-09-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后端方向/" itemprop="url" rel="index">
-                    <span itemprop="name">后端方向</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/22/JAVA的装箱类型初探/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/22/JAVA的装箱类型初探/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,125
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  9
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="PS-三天后朱健迎来他的第一场面试，希望他能得到他想要的结果。好了不说他了，我们干我们的。"><a href="#PS-三天后朱健迎来他的第一场面试，希望他能得到他想要的结果。好了不说他了，我们干我们的。" class="headerlink" title="PS:三天后朱健迎来他的第一场面试，希望他能得到他想要的结果。好了不说他了，我们干我们的。"></a>PS:三天后朱健迎来他的第一场面试，希望他能得到他想要的结果。好了不说他了，我们干我们的。</h2><p><img src="https://s2.ax1x.com/2019/09/22/upN7Ps.jpg" height="300" width="500"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/22/JAVA的装箱类型初探/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/20/如何使用-GitHub-Pages-预览-HTML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/20/如何使用-GitHub-Pages-预览-HTML/" itemprop="url">如何使用 GitHub Pages 预览 HTML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-20T23:36:27+08:00">
-                2019-09-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端方面/" itemprop="url" rel="index">
-                    <span itemprop="name">前端方面</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/20/如何使用-GitHub-Pages-预览-HTML/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/20/如何使用-GitHub-Pages-预览-HTML/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  738
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://m.qpic.cn/psb?/V11WXxvl1GT4El/q0VRv19kX43AqsMW0zI7KU21xmUPJR8BVlzNxHvr0Ac!/b/dL8AAAAAAAAA&amp;bo=WALoAFgC6AARCT4!&amp;rf=viewer_4" alt="梯子恢复后请重新选择github上的图床"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/20/如何使用-GitHub-Pages-预览-HTML/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/09/Backstreet-booooooooys/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dcc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/me.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="平安网吧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/09/Backstreet-booooooooys/" itemprop="url">Backstreet booooooooys</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T16:51:49+08:00">
-                2019-09-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/09/Backstreet-booooooooys/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/09/Backstreet-booooooooys/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  30
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/yBw9hS8clI0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>&nbsp;&nbsp;&nbsp;&nbsp;It’s my honor to meet you, Backstreet boys.after all these years passed, you guys are still can be singing together. <strong>Just like the old-time, isn’t it?</strong><br><iframe width="560" height="315" src="https://www.youtube.com/embed/k-fHexausaY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -2491,6 +837,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -2511,8 +864,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -2594,6 +956,22 @@
         </div>
       </section>
   
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注解-amp-反射"><span class="nav-number">1.</span> <span class="nav-text">注解&amp;反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要学习注解与反射？"><span class="nav-number">1.0.1.</span> <span class="nav-text">为什么要学习注解与反射？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习之前"><span class="nav-number">1.0.2.</span> <span class="nav-text">学习之前</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注解是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">注解是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注解的结构"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">注解的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元注解"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">元注解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JDK内置注解"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">JDK内置注解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注解的本质是什么？"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">注解的本质是什么？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射是什么？"><span class="nav-number">1.2.</span> <span class="nav-text">反射是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#反射相关APi"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">反射相关APi</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于反射的知识点"><span class="nav-number">1.2.1.</span> <span class="nav-text">关于反射的知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Class类"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Class类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取Class类的实例-获取Class对象"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">获取Class类的实例(获取Class对象)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哪些类型可以有Class对象"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">哪些类型可以有Class对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载内存分析"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">类加载内存分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类什么时候会发生初始化？"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">类什么时候会发生初始化？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类的被动引用-不会发生勒的初始化"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">类的被动引用(不会发生勒的初始化)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">类加载器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载器的不同"><span class="nav-number">1.2.1.8.</span> <span class="nav-text">类加载器的不同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反射基本操作"><span class="nav-number">1.2.1.9.</span> <span class="nav-text">反射基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反射操作泛型"><span class="nav-number">1.2.1.10.</span> <span class="nav-text">反射操作泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于setAccessible"><span class="nav-number">1.2.1.11.</span> <span class="nav-text">关于setAccessible()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射-注解实现ORM功能"><span class="nav-number">1.3.</span> <span class="nav-text">反射+注解实现ORM功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -2767,6 +1145,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
