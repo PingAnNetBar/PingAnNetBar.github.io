@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://violet.vivianlin.cn/images/class.jpg">
 <meta property="og:image" content="http://violet.vivianlin.cn/images/classloader.png">
 <meta property="og:image" content="http://violet.vivianlin.cn/images/loaderType.jpg">
-<meta property="og:updated_time" content="2020-11-24T16:49:56.968Z">
+<meta property="og:updated_time" content="2020-11-24T17:00:14.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="注解与反射">
 <meta name="twitter:description" content="注解&amp;amp;反射为什么要学习注解与反射？ 注解与反射作为Java语言特性的后半程的高级部分，学习曲线是比较陡峭的。但它又是Java初学者必须跨越的门槛。因为在当下Java的市场，技术选型中的SSM占据着大部分份额。而Spring中两大核心内容的Ioc容器与AOP、MyBatis的ORM，它们的底层实现都是由注解与反射所构建的。若注解反射掌握的不好，很难去真正理解框架的本质，也就自然很难脱离他人的">
@@ -438,6 +438,7 @@
 </blockquote>
 <h3 id="学习之前"><a href="#学习之前" class="headerlink" title="学习之前"></a>学习之前</h3><p>注解是建立在Java的发射机制上的特性。所以要弄懂注解，就要先弄懂反射，要弄懂反射，就要先弄懂类加载的过程。本文三点都会提及，并不需要自上而下的阅读。</p>
 <p>光看并不利于理解，一定要跟着敲。不断地模仿、探索和反思是绝大多数人学习的方式，而不断地积累才会让你有这个能力去灵光一现。过渡妖魔化智力只会让你一事无成。</p>
+<a id="more"></a>
 <hr>
 <h2 id="注解是什么？"><a href="#注解是什么？" class="headerlink" title="注解是什么？"></a>注解是什么？</h2><blockquote>
 <p>注释是在JDK5.0版本被引入的特性。<abbr title="只要理解了这句话，你就不会再问自己为什么要使用注释与反射，为什么不用寻常的代码块而去“绕圈子”"><strong>它是既属于程序，也不属于程序。他可以对程序作出解释，也可以被其他程序（编译器）进行解释。</strong></abbr>在程序中，很多代码块它们在整个程序的逻辑中并不关键，只是起到一个连接，配置的作用。我们认为将它们抽离出来作为一个配置文件，可以有效地提高程序的灵活性。而<abbr title="Extensible Markup Language 可扩展标记语言">xml</abbr>就是这么诞生的。xml就是这么诞生的。而<strong>可配置</strong>这个思想，后来也诞生了注解。注解与反射的结合，让一切变得更加简洁，当然xml与注解各有适合的应用场景。斟酌选择才是最吼的。</p>
